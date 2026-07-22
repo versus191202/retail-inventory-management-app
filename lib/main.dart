@@ -19,12 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Firebase Connected'),
-        ),
-      ),
+    return MaterialApp.router(
+      routerConfig: appRouter,
     );
   }
 }
@@ -34,6 +30,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await setupDependencies();
 
   runApp(const MyApp());
 }

@@ -1,0 +1,18 @@
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Navigate to the home screen when the button is pressed
+            context.go('/home');
+          },
+          child: const Text('Login'),
+        ),
+      )
+    );
+  }
+}
